@@ -11,6 +11,12 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      theme: ThemeData(
+        useMaterial3: false,
+        appBarTheme:
+            const AppBarTheme(backgroundColor: Colors.amber, centerTitle: true),
+      ),
+      debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       home: Scaffold(
         appBar: AppBar(
@@ -18,6 +24,12 @@ class MyApp extends StatelessWidget {
         ),
         body: Center(
           child: Text('Hello World!'),
+        ),
+        floatingActionButton: FloatingActionButton(
+          onPressed: () {
+            debugPrint('Clicked');
+          },
+          child: const Icon(Icons.ac_unit),
         ),
       ),
     );
